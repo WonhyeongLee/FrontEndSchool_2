@@ -1,5 +1,10 @@
 #folder
 testrepo/
+0401_css특강/lab
+0401_css특강/pixar
+0401_css특강/수업자료
 
 #file
 *.pptx
+*.zip
+*.DS_Store
