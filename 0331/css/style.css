@@ -1,0 +1,41 @@
+body{
+    margin: 0;
+}
+main{
+    width: 100vw;
+    height: 100vh;
+    background-color: skyblue;
+}
+.wrapper{
+    width: 1000px;
+    height: 600px;
+    background-color: whitesmoke;
+    display: flex;
+    border: solid 3px black;
+    margin: 0 auto;
+
+}
+.login-main-left{
+    flex: 1;
+    padding: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    border: solid 2px red;
+}
+.login-main-left h1{
+    width: 100%;
+}
+.login-main-right{
+    width: 400px;
+    border: solid 2px yellow;
+}
+.signin{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    border: solid 2px blue;
+}
