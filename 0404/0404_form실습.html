@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form실습</title>
+    <style>
+        body,label,input,h1,h2,p,small,button{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .form-main{
+            background-color: rgb(239, 214, 239);
+        }
+        .form-content{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0 auto;
+            padding: 80px 0px;
+            width: 100%;
+            max-width: 800px;
+        }
+        .form-wrap{
+            display: flex;
+            flex-direction: column;
+            margin: 20px 0;
+            padding: 25px;
+            border: 1px solid silver;
+            border-radius: 0.5rem;
+            background-color: white;
+        }
+        .form-header{
+            padding: 30px;
+            font-size: 20px;
+            border: 1px solid silver;
+            border-radius: 0.5rem;
+            background-color: white;
+        }
+        .form-header p{
+            margin-top: 20px;
+            font-size: 15px;
+        }
+        .form-wrap label{
+            width: fit-content;
+        }
+        .form-text-label{
+            margin-bottom: 15px;
+        }
+        .form-text-label ~ label{
+            display: block;
+            padding: 7px 0px;
+        }
+        .form-input{
+            width: fit-content;
+            padding: 10px;
+            border: none;
+            border-bottom: 1px solid #CCC;
+            box-sizing: border-box;
+        }
+        .form-input:focus{
+            outline: none;
+        }
+        .form-text-label>input{
+            display: block;
+        }
+        .form-select{
+            display: block;
+            width: 40%;
+            height: 50px;
+            padding: 0 5px;
+            border: 1px solid silver;
+            border-radius: 0.2rem;
+            background-color: white;
+        }
+        .submit{
+            padding: 5px 0;
+            width: 70px;
+            font-size: 15px;
+            color: white;
+            background-color: purple;
+            border: 1px solid purple;
+            border-radius: 0.2rem;
+        }
+
+    </style>
+</head>
+<body>
+    <main class="form-main">
+        <section class="form-content">
+            <header class="form-header">
+                <h1>나와 잘 맞는 회사는 ?</h1>
+                <p>가고 싶은 회사에 대한 호감도를 조사합니다. 아이고 의미없다.ㅠ</p>
+            </header>
+    
+            <form action="" method="get">
+                <!-- ul , li 로 작성해보기 -->
+                <!-- <ul class="form-content">
+                    <li class="form-input">
+                        <input id="radio1" type="radio" name="radio">
+                        <label for="radio1">네</label>
+                    </li>
+                    <li class="form-input">
+                        <input id="radio2" type="radio" name="radio">
+                        <label for="radio2">카</label>
+                    </li>
+                    <li class="form-input">
+                        <input id="radio3" type="radio" name="radio">
+                        <label for="radio3">라</label>
+                    </li>
+                    <li class="form-input">
+                        <input id="radio4" type="radio" name="radio">
+                        <label for="radio4">쿠</label>
+                    </li>
+                    <li class="form-input">
+                        <input id="radio5" type="radio" name="radio">
+                        <label for="radio5">베</label>
+                    </li>
+                </ul> -->
+                <section class="form-wrap">  
+                <label class="form-text-label">다음 문자중에 왠지 마음에 드는 것을 하나 고르세요
+                </label>
+                    <label>
+                        <input type="radio" name="radio"> 
+                        네
+                    </label>
+                    <label>
+                        <input type="radio" name="radio"> 
+                        카
+                    </label>
+                    <label>
+                        <input type="radio" name="radio">
+                        라
+                    </label>
+                    <label>
+                        <input type="radio" name="radio"> 
+                        쿠
+                    </label>
+                    <label>
+                        <input type="radio" name="radio">
+                        베
+                    </label>
+                </section>
+
+                <section class="form-wrap">
+                <label class="form-text-label">친구와 문자를 합니다. 다음중 어떤 메신저를 이용하시겠습니까? 모두 골라주세요.</label>
+                    <label>
+                        <input type="checkbox" name="kakaotalk"> 
+                        카카오톡
+                    </label>
+                    <label>
+                        <input type="checkbox" name="line"> 
+                        라인
+                    </label>
+                    <label>
+                        <input type="checkbox" name="instagram_dm">
+                        인스타그램 디엠
+                    </label>
+                    <label>
+                        <input type="checkbox" name="nateon"> 
+                        네이트온
+                    </label>
+                    <label>
+                        <input type="checkbox" name="buddybuddy">
+                        버디버디
+                    </label>
+                </section>
+        
+                <section class="form-wrap">
+                    <label class="form-text-label" for="q3">
+                        면접에서 자신의 포부를 한 문장으로 얘기한다면?
+                    </label>
+                        <input type="text" id="q3" class="form-input" placeholder="내 답변">
+                </section>
+
+                <section class="form-wrap">
+                    <label class="form-text-label" for="q4">
+                        당신은 지금 한 기업의 최종면접을 앞두고 있습니다. 면접장에 들어가기 직전,자기자신에게 해주고 싶은말은?
+                    </label>
+                        <input type="text" id="q4" class="form-input" placeholder="내 답변">
+                    
+                </section>
+
+                <section class="form-wrap">
+                    <label class="form-text-label" for="q5">
+                        다음 중 기술 면접때 듣고 싶은 질문이 아닌것은?
+                    </label>
+                        <select class="form-select" name="question" id="q5">
+                            <option value="">선택</option>
+                            <option value="javascript">자바스크립트</option>
+                            <option value="react">리액트</option>
+                            <option value="css">css</option>
+                        </select>
+                    
+                </section>
+
+                <section class="form-wrap">
+                    <label class="form-text-label">
+                        취업을 희망하는 날짜를 선택해주세요
+                    </label>
+                    <small>날짜</small>
+                    <input type="date"class="form-input">
+                </section>
+
+                <section class="form-wrap">
+                    <label class="form-text-label">
+                        업무를 시작 하기에 가장 적당한 시간을 고르세요
+                    </label>
+                        <small>날짜</small>
+                        <input type="time" class="form-input">
+                </section>
+                
+                <button class="submit" type="submit">제출</button>
+            </form>
+        </section>
+
+    </main>
+</body>
+</html>
