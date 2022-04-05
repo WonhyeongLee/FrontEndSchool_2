@@ -63,9 +63,6 @@
         .form-input:focus{
             outline: none;
         }
-        .form-text-label>input{
-            display: block;
-        }
         .form-select{
             display: block;
             width: 40%;
@@ -123,23 +120,23 @@
                 <label class="form-text-label">다음 문자중에 왠지 마음에 드는 것을 하나 고르세요
                 </label>
                     <label>
-                        <input type="radio" name="radio"> 
+                        <input type="radio" name="radio" value="naver"> 
                         네
                     </label>
                     <label>
-                        <input type="radio" name="radio"> 
+                        <input type="radio" name="radio" value="kakao"> 
                         카
                     </label>
                     <label>
-                        <input type="radio" name="radio">
+                        <input type="radio" name="radio" value="line">
                         라
                     </label>
                     <label>
-                        <input type="radio" name="radio"> 
+                        <input type="radio" name="radio" value="coupang"> 
                         쿠
                     </label>
                     <label>
-                        <input type="radio" name="radio">
+                        <input type="radio" name="radio" value="baedal">
                         베
                     </label>
                 </section>
@@ -147,23 +144,24 @@
                 <section class="form-wrap">
                 <label class="form-text-label">친구와 문자를 합니다. 다음중 어떤 메신저를 이용하시겠습니까? 모두 골라주세요.</label>
                     <label>
-                        <input type="checkbox" name="kakaotalk"> 
+                        <input type="checkbox" name="checkbox"  value="kakaotalk"> 
                         카카오톡
                     </label>
+
                     <label>
-                        <input type="checkbox" name="line"> 
+                        <input type="checkbox" name="checkbox" value="line"> 
                         라인
                     </label>
                     <label>
-                        <input type="checkbox" name="instagram_dm">
+                        <input type="checkbox" name="checkbox" value="instagram_dm">
                         인스타그램 디엠
                     </label>
                     <label>
-                        <input type="checkbox" name="nateon"> 
+                        <input type="checkbox" name="checkbox" value="nateon"> 
                         네이트온
                     </label>
                     <label>
-                        <input type="checkbox" name="buddybuddy">
+                        <input type="checkbox" name="checkbox" value="buddybuddy">
                         버디버디
                     </label>
                 </section>
@@ -197,19 +195,19 @@
                 </section>
 
                 <section class="form-wrap">
-                    <label class="form-text-label">
+                    <label class="form-text-label" for="q6">
                         취업을 희망하는 날짜를 선택해주세요
                     </label>
                     <small>날짜</small>
-                    <input type="date"class="form-input">
+                    <input type="date"class="form-input" id="q6">
                 </section>
 
                 <section class="form-wrap">
-                    <label class="form-text-label">
+                    <label class="form-text-label" for="q7">
                         업무를 시작 하기에 가장 적당한 시간을 고르세요
                     </label>
                         <small>날짜</small>
-                        <input type="time" class="form-input">
+                        <input type="time" class="form-input" id="q7">
                 </section>
                 
                 <button class="submit" type="submit">제출</button>
