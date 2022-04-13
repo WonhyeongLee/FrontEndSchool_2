@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        p{
+            border: 5px solid blue;
+            position: relative;
+            top: 15px;
+            left: 15px;
+        }
+        span{
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            display: block;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        p::before{
+            /* content: 'inline'; */
+            /* 인라인 처럼 작동하기 때문에 폭 높이 주려면 block 처리해야함 */
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            content: 'TEST';
+            display: block;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        p::after{
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+        /* P태그안에 absolute는 p 태그로 따라감 */
+    </style>
+</head>
+<body>
+   
+    <p><span>world</span>hello world</p>
+</body>
+</html>

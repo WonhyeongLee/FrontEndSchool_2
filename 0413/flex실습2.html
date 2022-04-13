@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex 실습2</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <style>
+        .container{
+            display: flex;
+            height: 100vh;
+            width: 300px;
+            /* flex-wrap: nowrap; */
+            flex-wrap: wrap;
+            /* align-items: center; */
+            /* align-content: center; */
+            /* 아이템의 행이 2줄이상 되었을 때 중앙 정렬 */
+            
+        }
+        li{
+            box-sizing: border-box;
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+            border: 1px black solid;
+        }
+    </style>
+</head>
+<body>
+    <ul class="container">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+</body>
+</html>
