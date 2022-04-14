@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex shrink</title>
+    <link rel="stylesheet" href="./reset.css">
+    <style>
+        .container{
+            display: flex;
+            height: 100vh;
+        }
+        button{
+            flex: 1;
+            box-sizing: border-box;
+            height: 50px;
+            background-color: pink;
+            border: 1px solid black;
+        }
+        button:focus{
+            border: 5px solid black;
+        }
+        button:nth-child(1){
+            /* 전체로 봤을 때 큰값이 뒤로감 */
+            order: 1;
+        }
+    </style>
+</head>
+<body>
+    <ul class="container">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+    </ul>
+</body>
+</html>
