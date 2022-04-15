@@ -2,35 +2,49 @@
 <html lang="ko">
 <head>
     <style>
+        body, h1{
+            margin: 0;
+            padding: 0;
+        }
+        body>p{
+            padding-top: 100px;
+        }
         .container:after {
             content: " ";
             display: block;
             clear: both;
         }
+        /* .container{
+            overflow: hidden;
+            height: 1200px;
+        } */
         section {
-            width: 800px;
+            width: 600px;
             padding: 50px;
             float: left;
         }
         aside {
             border: solid 1px black;
-            float: left;
+            float: right;
             width: 200px;
             height: 800px;
             padding: 20px;
-            /* fixed로 고치고 그 차이를 설명해보세요. */
-            /* position: sticky; */
-            position: fixed;
-            top: 200px;
+            position: sticky;
+            top: 150px;
             right: 40px;
+        }
+        body>h1{
+            position: fixed;
+            background-color: lightcoral;
         }
     </style>
 </head>
 <body>
     <h1>hello world</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum itaque fugiat harum ipsum ad sint earum molestias? Ratione cumque consequuntur nihil, voluptas veritatis, suscipit labore odit sint veniam repellat dolore.</p>
-    <p>Ipsam soluta ad minima non, quos maxime, eligendi, voluptatum sunt illo id laborum dolores ipsa explicabo porro fugit ab nulla. Officia maiores doloribus dolorem animi? Ex, quas. Voluptates, iusto ipsa?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum itaque fugiat harum ipsum ad sint earum molestias? Ratione cumque consequuntur nihil, voluptas veritatis, suscipit labore odit sint veniam repellat dolore.
+    Ipsam soluta ad minima non, quos maxime, eligendi, voluptatum sunt illo id laborum dolores ipsa explicabo porro fugit ab nulla. Officia maiores doloribus dolorem animi? Ex, quas. Voluptates, iusto ipsa?</p>
     <div class="container">
+        
         <section>
             <h2>hello world</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat ipsam at quod, officia necessitatibus expedita odit error facilis delectus blanditiis nostrum optio asperiores exercitationem reiciendis quasi ex enim iusto unde?</p>
@@ -54,10 +68,12 @@
             <p>Ducimus voluptas architecto consectetur cupiditate, officia beatae cumque saepe inventore necessitatibus? Libero iure voluptatum dolor. Debitis, neque. Maxime commodi odio incidunt maiores! Maxime, consequuntur. Adipisci in excepturi vero repudiandae quasi!</p>
             <p>Repudiandae magnam porro amet illum tenetur? Minus ipsam quibusdam vero? Tempora saepe dolores, atque placeat quisquam obcaecati! Perspiciatis iusto necessitatibus adipisci debitis molestias sunt et, voluptas reiciendis molestiae, commodi laborum!</p>
         </section>
+        
         <aside>
             <h3>hello world</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum voluptate non quis esse, provident error commodi voluptatibus eveniet sapiente nesciunt nihil praesentium facere velit dolorum consequatur itaque veniam minima voluptates.</p>
         </aside>
+        
     </div>
 </body>
 </html>
