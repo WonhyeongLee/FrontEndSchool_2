@@ -1,0 +1,81 @@
+.wrap_main{
+    width: 500px;
+    padding: 20px;
+    margin: 100px auto;
+}
+.wrap_social_login{
+    display: flex;
+    flex-direction: column;
+}
+.wrap_social_login .btn{
+    padding: 11px 0px 11px 12px;
+    color: gray;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 10px;
+    line-height: 28px;
+    text-align: center;
+}
+/* div 로 감싸고 이미지스프라이트 vs img 태그 로 개별 이미지 */
+.wrap_social_login .div_logo{
+    float: left;
+    background-image: url(./css_sprites.png);
+    width: 28px;
+    height: 28px;
+}
+.wrap_social_login .div_logo_retina{
+    float: left;
+    background-image: url(./css_sprites_retina.png);
+    background-size: 117px 84px;
+    width: 28px;
+    height: 28px;
+}
+.img_google{
+    background-position: -10px -7px;
+}
+.img_fb{
+    background-position: -90px -7px;
+}
+.img_naver{
+    background-position: -10px -49px;
+}
+.img_kakao{
+    background-position: -52px -8px;
+}
+a.btn1{
+    border: gray solid 1px;
+    border-radius: 4px;
+}
+a.btn2{
+    border: #2d9cdb solid 1px;
+    border-radius: 4px;
+}
+a.btn3{
+    border: #00bf18 solid 1px;
+    border-radius: 4px;
+}
+a.btn4{
+    border: #f2c94c solid 1px;
+    border-radius: 4px;
+}
+/* outline vs box-shaow 뭐가 더 나은지 ? */
+a.btn1:hover{
+    outline: 1px solid gray;
+    outline-offset: -2px;
+    border-radius: 4px;
+}
+a.btn2:hover{
+    outline: 1px solid #2d9cdb;
+    outline-offset: -2px;
+    border-radius: 4px;
+}
+a.btn3:hover{
+    outline: 1px solid #00bf18;
+    outline-offset: -2px;
+    border-radius: 4px;
+}
+a.btn4:hover{
+    outline: 1px solid #f2c94c;
+    outline-offset: -2px;
+    border-radius: 4px;
+}
