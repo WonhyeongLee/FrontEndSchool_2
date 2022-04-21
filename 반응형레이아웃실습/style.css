@@ -39,7 +39,6 @@ body {
 	font-family: "SpoqaHanSansNeo-Regular";
 	font-size: 1.6rem;
 	color: #121314;
-	word-break: keep-all;
 }	
 
 strong {
@@ -62,11 +61,13 @@ strong {
 	width: 120rem;
 	max-width: calc(100% - 6rem);
 	margin: 24rem auto;
+	word-break: keep-all;
 }
 
 .section-text h1 {
 	font-size: 7rem;
 	font-weight: normal;
+	line-height: 9.6rem;
 }
 
 .section-text p {
@@ -138,20 +139,40 @@ strong {
 /* 태블릿 */
 @media (max-width: 768px) {
 	.wrap{
+		width: 85.3rem;
 		display: block;
-		margin: 2rem auto;
+		margin: 3.3rem auto;
 	}
 	.section-field{
 		margin-top: 60px;
 	}
 	.section-field ul{
 		flex-direction: row;
+		flex-wrap: wrap;
 	}
-	.section-field ul li{
+	.section-field li{
+		min-width: 28rem;
+	}
+	.section-field .field-title{
+		font-size: 2.6rem;
+		line-height: 2.7rem;
 		min-width: 264px;
 	}
+	.section-field .field-go{
+		font-size: 1.7rem;
+		line-height: 1.8rem;
+	}
+	.section-text h1{
+		font-size: 7.7rem;
+		line-height: 9.6rem;
+	}
+	.section-text p{
+		font-size: 2rem;
+		line-height: 2.2rem;
+	}
+
 }
-@media (max-width: 610px) and (min-width: 391px) {
+/* @media (max-width: 610px) and (min-width: 391px) {
 	.wrap{
 		margin: 2rem auto;
 	}
@@ -159,29 +180,35 @@ strong {
 		flex-direction: column;
 		align-items: flex-start;
 	}
-
-	.field-test{
-		display: flex;
-	}
-}
+} */
 /* 모바일 */
 @media (max-width: 390px) {
 	.wrap{
-		margin: 6rem auto;
+		margin: 11.11rem 3rem 0;
+	}
+	.section-field{
+		margin-top: 4.4rem;
 	}
 	.section-field ul{
 		min-width: calc(100%-60rem);
-		flex-direction: column;
+		flex-direction: row;
+	}
+	.section-field ul li a{
+		font-size: 2.2rem;
+	}
+	.section-field ul li a span{
+		font-size: 1.5rem;
 	}
 	.section-text h1 {
-		font-size: 3.5rem;
+		font-size: 4rem;
+		line-height: 5rem;
 		font-weight: normal;
 	}
 	
 	.section-text p {
 		margin-top: 2rem;
-		font-size: 1.5rem;
+		font-size: 1.6rem;
 		color: #47494d;
-		line-height: 1.5;
+		line-height: 1.5rem;
 	}
 }
