@@ -193,11 +193,14 @@ strong {
 		min-width: calc(100%-60rem);
 		flex-direction: row;
 	}
-	.section-field ul li a{
+	.section-field .field-title{
 		font-size: 2.2rem;
+		line-height: 2.7rem;
+		min-width: 264px;
 	}
-	.section-field ul li a span{
+	.section-field .field-go{
 		font-size: 1.5rem;
+		line-height: 1.8rem;
 	}
 	.section-text h1 {
 		font-size: 4rem;
