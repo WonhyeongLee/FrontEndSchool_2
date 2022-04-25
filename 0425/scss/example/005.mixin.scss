@@ -1,0 +1,63 @@
+@mixin box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    @include box;
+    background-color: red;
+}
+
+// mixin 매개변수활용
+
+@mixin box-color($color) {
+    width: 100px;
+    height: 100px;
+    background-color: $color;
+}
+
+.card-blue{
+    @include box-color(red);
+}
+// 기본값을 주면 매게변수 안써도 기본값으로 들어감
+// 중간은 null 로 
+@mixin pri-button($width, $height, $radius, $color:black) {
+    width: $width;
+    height: $height;
+    border-radius: $radius;
+    background-color: $color;
+}
+.btn{
+    @include pri-button(100px,50px,20px,aqua);
+}
+.btn_{
+    @include pri-button(100px,50px,20px);
+}
+
+// content
+// 위랑 아래는 표현하는 방법이 다를 뿐 내용은 같음
+// 아키텍쳐를 변경하고 싶을 때 
+@mixin one{
+    width: 100px;
+    height: 100px;
+    color: white;
+    @content;
+}
+
+a {
+    @include one{
+        background-color: black;
+    }
+}
+
+@mixin two{
+    width: 100px;
+    height: 100px;
+    color: white;
+}
+
+button {
+    @include two;
+    background-color: black;
+}

@@ -1,0 +1,16 @@
+.btn {
+  color: red;
+  font-size: 16px;
+  background-color: blue;
+}
+
+.next {
+  height: 0;
+  width: 0;
+  border-color: black;
+  border-style: solid;
+  border-width: 2.5px;
+  border-right-color: black;
+  border-color: hotpink;
+}
+/*# sourceMappingURL=006_조건.css.map */

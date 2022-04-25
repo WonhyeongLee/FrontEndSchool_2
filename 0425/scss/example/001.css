@@ -1,0 +1,67 @@
+ul li {
+  color: red;
+  font-size: 10px;
+}
+
+.one {
+  color: red;
+}
+
+.one .two {
+  color: green;
+}
+
+.one .three {
+  color: blue;
+}
+
+.add-icon {
+  background-image: url("./assets/arrow-right-solid.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 14px 14px;
+}
+
+ul li:hover {
+  background: white;
+  cursor: pointer;
+}
+
+ul li:last-child {
+  border-bottom: 2px solid black;
+}
+
+.box-yellow {
+  background: #ff6347;
+}
+
+.box-red {
+  background: #ffd700;
+}
+
+.box-green {
+  background: #9acd32;
+}
+
+.article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 10px;
+}
+
+.article .article-content {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+i {
+  opacity: 0.5;
+}
+/*# sourceMappingURL=001.css.map */

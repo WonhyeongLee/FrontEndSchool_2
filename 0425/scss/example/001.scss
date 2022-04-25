@@ -1,0 +1,72 @@
+ul {
+    li{
+        color: red;
+        font-size: 10px;
+    }
+}
+
+.one{
+    color: red;
+    .two{
+        color: green;
+    }
+    .three {
+        color: blue;
+    }
+}
+
+//Scss
+.add-icon {
+    background : {
+      image: url("./assets/arrow-right-solid.svg");
+      position: center center;
+      repeat: no-repeat;
+      size: 14px 14px;
+    }
+  }
+
+  //Scss
+ul {
+    li {
+      &:hover {
+        background: white;
+        cursor: pointer;
+              // 가상요소 
+      }
+      &:last-child {
+        border-bottom: 2px solid black;
+              // 가상클래스 
+      }
+    }
+  }
+  //li 태그의 가상요소와 가상클래스에게 스타일을 적용한 예시 
+  //&을 사용하여 li와 :hover, :last-child를 연결
+
+  //Scss
+.box {
+    &-yellow {
+      background: #ff6347;
+    }
+    &-red {
+      background: #ffd700;
+    }
+    &-green {
+      background: #9acd32;
+    }
+  }
+  //.box라는 이름이 같기 때문에 &를 사용해 중첩구조로 만들 수 있다
+
+  //Scss , 중첩 벗어나기 @at-root , 과도한 중첩을 피하자
+.article {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    .article-content {
+      font-size: 14px;
+      opacity: 0.7;
+      @at-root i {
+        opacity: 0.5;
+      }
+    }
+  }

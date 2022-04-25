@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAqBA,AACC,OADM,CACN,EAAE,CAAC;EACF,SAAS,EAJqB,IAAI;CAKlC",
+    "sources": [
+        "002.변수_타입.scss"
+    ],
+    "names": [],
+    "file": "002.변수_타입.css"
+}

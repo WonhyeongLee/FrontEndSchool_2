@@ -1,0 +1,27 @@
+.info{
+	$line-normal : 1.34; // 지역변수
+	font-size : 15px;
+	line-height : $line-normal;
+	text-align : right;
+    span{
+		line-height : $line-normal;
+	}
+}
+//지역변수라 실행 안됨. 에러뜸
+// .info2{
+//     line-height: $line-normal;
+// }
+
+//Scss
+$font-p : 15px; // 전역변수
+
+.main-box{
+	p {
+		font-size : $font-p;
+	}
+	a {
+		font-size : $font-p;
+	  color : blue;
+		text-decoration : none;
+	}
+}

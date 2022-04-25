@@ -1,0 +1,33 @@
+.base-box0 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+.box0 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border: 5px solid black;
+}
+
+.base-box, .box {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+.box {
+  border: 5px solid black;
+}
+
+.box2 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+.box2 {
+  border: 5px solid black;
+}
+/*# sourceMappingURL=007.extend.css.map */
