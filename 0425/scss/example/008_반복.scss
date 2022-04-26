@@ -8,3 +8,12 @@ $color-palette:red green blue pink;
         height: 100px;
     }
 }
+
+@each $color in $color-palette {
+    .color-circle-#{$color}{
+        background: $color;
+        width:20px;
+        height: 20px;
+    }
+    
+}
