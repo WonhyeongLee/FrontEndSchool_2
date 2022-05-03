@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>splice, slice</title>
+</head>
+<body>
+    <script>
+        // sort() :  배열의 요소를 정렬한 후 그 배열을 반환합니다.
+        let avengers = ['spiderman','ironman','hulk','thor'];
+        avengers.sort(); // 알파벳 순으로 정렬
+        //sort는 문자열로 변환하고 유니코드 순으로 정렬하기 때문에 숫자는 안먹힘
+        // compare 함수를 사용하면 문자열 자동변환이 멈춤
+        let arrNum = [14,3,7,23,31,15];
+
+        arrNum.sort(
+            function(a,b){
+                // return a-b;
+                return b-a;
+                // a-b 의 값에 따라서 정렬의 기준을 정함
+                // 양수가 나오면 오름차순, 음수가 나오면 내림차순 
+            }
+        );
+        console.log(arrNum);
+
+         // 다음 배열에서 sort 함수를 이용해 원소의 product의 값을 기준으로 가나다순으로 정렬해보세요.
+         var studentList = [
+            {
+                id: 1, product: '연필', stock: 10
+            },
+            {
+                id: 2, product: '색종이', stock: 33
+            },
+            {
+                id: 3, product: '체육복', stock: 2
+            },
+            {
+                id: 4, product: '만연필', stock: 0
+            }
+        ]
+        // 유니코드 끼리는 > , <  연산은ㄴ 가능하지만 - 연산은 불가능하기 때문에
+        // 람다함수로 넘겨줘야한다
+        // 음수가 리턴된다면 a < b를 의미하고,
+        // 양수가 리턴된다면 a > b를 의미하고,
+        // 0이 리턴된다면 a == b를 의미한다.
+        studentList.sort(
+            function(a,b){
+                if(a.product>b.product)
+                    return 1
+                if(a.product<b.product)
+                // else if 쓰려면 b>a 처럼 바꾸면됨
+                    return -1
+                else
+                    return 0
+            }
+        );
+        console.log(studentList);
+    </script>
+</body>
+</html>

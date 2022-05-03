@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let txt = 'ABCDEFGHIJKABC';
+        let text_two = 'mom said \'helloworld\'';
+        let text_three = "mom said 'hello world'";
+        let number = '100';
+
+        document.write(number+ number, '<br>');
+        document.write(Number(number)+ Number(number), '<br>');
+        //  숫자 이외의 값을 받지 않기위해
+        document.write(parseInt(number)+ parseInt(number), '<br>');
+        // 권장방법
+        document.write(+number + +number, '<br>');
+        // 권장하진않지만 숫자만 있는 곳에서는 이렇게 하기도 함
+        document.write(`txt : ${txt}`);
+        //문제 : 100 + 100 = 200 이라고 출력 해주세요
+        document.write(`${number} + ${number} = ${number  * 2} <br>`);
+
+        document.write(`txt.indexOf : ${txt.indexOf("F")} <br>`);
+        document.write(`txt.search : ${txt.search("FGH")} <br>`);
+
+        let regExp = /CD/;
+        document.write(`txt.lastIndexof <br>`);
+        document.write(`txt.lastIndexOf : ${txt.lastIndexOf("F")} <br>`);
+        document.write(`txt.replace('ABC', 'hojun') : ${txt.replace(/ABC/g, 'hojun')} <br>`);
+
+        //slice(시작인덱스,종료인덱스) : 시작인덱스부터 종료인덱스 -1 까지
+        //substr(시작위치, 길이) : 시작인덱스부터 길이만큼 반환
+        document.write(`txt.slice(0.3) : ${txt.slice(0.3)} <br>`);
+        document.write(`txt.substring(0.3) : ${txt.substring(0.3)} <br>`);
+        document.write(`txt.substr(0.3) : ${txt.substr(0.3)} <br>`);
+        document.write('abcdef'.replace('cde','hojun'));
+        // /abc/g abc를 글로벌하게 찾는단
+
+    </script>
+</body>
+
+</html>

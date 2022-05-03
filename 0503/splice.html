@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>splice, slice</title>
+</head>
+<body>
+    <script>
+        // let avengers = ['spiderman', 'ironman','hulk','ivernman'];
+        // avengers.splice(1,1);
+        // avengers.splice(2,0,'blackwindow');
+        var fish = ['정어리', '고등어', '돌고래', '참치', '고래상어', '코끼리'];
+
+        document.write(`--------------------------------------------------<br>`);
+        document.write(`1. splice를 이용해 코끼리 제거<br>`);
+        fish.splice(-1,1);
+        // fish.splice(5,1);
+        // fish.splice(-1); -1 만 써도 없어짐 , 값을 정해주지않으면 끝가지 삭제함
+        document.write(`결과 : ${fish}<br>`);
+        document.write(`--------------------------------------------------<br>`);
+        document.write(`2. 참치 다음에 다금바리를 추가해보세요<br>`);
+        fish.splice(-1,0,'다금바리');
+        // fish.splice(4,0,'다금바리');
+        document.write(`결과 : ${fish}<br>`);
+        document.write(`--------------------------------------------------<br>`);
+        document.write(`3. 돌고래를 제거하고 옥돔과 갈치를 추가해보세요<br>`);
+        fish.splice(2,1,'옥돔','갈치');
+        document.write(`결과 : ${fish}<br>`);
+        document.write(`--------------------------------------------------<br>`);
+
+
+        var fish = ['정어리', '고등어', '돌고래', '참치', '고래상어', '코끼리'];
+        // fish 배열에서 물고기가 아닌것을 slice로 선택해 콘솔로 출력해 보세요.
+        document.write(`${fish.slice(2,3)}`);
+    </script>
+</body>
+</html>

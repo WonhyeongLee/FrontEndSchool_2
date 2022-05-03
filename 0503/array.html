@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>push,pop</title>
+</head>
+<body>
+    <script>
+        let market = function(){
+            console.log(`마켓 입장, 재료구매`);
+            material.push('마늘','양파','배추');
+            console.log(material);
+        }
+        let quest = function(){
+            console.log(`엄마한테 재료 전달 : ${material.pop()}`);
+            console.log(material);
+        }
+
+        let material = [];
+        market();
+        quest();
+
+
+
+    </script>
+</body>
+</html>
