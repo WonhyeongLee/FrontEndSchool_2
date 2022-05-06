@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>unshift</title>
+</head>
+<body>
+    <script>
+        // Array.prototype.unshift() 
+        // 맨 앞에 1개 이상의 요소를 추가, 배열의 새로운 길이 반환
+        const cafe = ['coffee', 'cake', 'tea', 'cookie'];
+        const count = cafe.unshift('bread');
+        console.log(count);
+        let first = cafe.shift('bread');
+        console.log(first);
+        cafe.push('cake');
+        console.log(cafe);
+        console.log(`${cafe.indexOf('tea')}`);
+        console.log(`${Array.isArray(cafe)}`);
+        console.log(`${Array.isArray('tea')}`);
+        // join
+        let number = ['010','5044','2903'];
+        console.log(`${number.join('-')}`);
+        // fill
+        console.log(`${cafe.fill('bread', -1)}`);
+        let fill_test = ['undefined',undefined,undefined,undefined,undefined,undefined];
+        console.log(fill_test[2]);
+        console.log(`${fill_test.fill(0)}`);
+
+        // find 와 filter
+        // find는 1개의 값을 찾아 반환하기 때문에 filter 보다 성능이 우수하다
+        // - find() 메서드는 주어진 판별 함수를 만족하는 첫 번째 요소의 값을 반환
+        // - findIndex() 메서드는 주어진 판별 함수를 만족하는 배열의 첫 번째 요소에 대한 인덱스를 반환
+        const cafe2 = [{
+        'item' : 'coffee',
+        'amount' : 5
+        },{
+        'item' : 'cake',
+        'amount' : 4
+        },{
+        'item' : 'tea',
+        'amount' : 7
+        },{
+        'item' : 'cookie',
+        'amount' : 3
+        }];
+
+        const index = cafe2.findIndex(obj => obj.item.length <= 3)
+        console.log(index);
+    </script>
+</body>
+</html>
