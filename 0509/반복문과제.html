@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        let data = [{
+                반 : 1, 
+                번 : 1, 
+                이름 : "호준", 
+                중간고사점수 : 55
+            }, {
+                반 : 1, 
+                번 : 2, 
+                이름 : "길동", 
+                중간고사점수 : 60
+            }, {
+                반 : 1, 
+                번 : 3, 
+                이름 : "영희", 
+                중간고사점수 : 30
+            }, {
+                반 : 1, 
+                번 : 4, 
+                이름 : "철수", 
+                중간고사점수 : 20
+            }, {
+                반 : 1, 
+                번 : 5, 
+                이름 : "규리", 
+                중간고사점수 : 100
+            }]
+
+        // 1. 중간고사 점수를 하나의 array로 만들어주세요.
+        console.log(data.map(x => x.중간고사점수))
+        let q1 = [];
+        // for(let i = 0; i < data.length; i++){
+        //     q1.push(arr2[`${data[i].이름}`] = data[i].중간고사점수)
+            
+        // }
+        for (let i = 0;i<data.length;i++){
+            let obj=[];
+            obj.push(`${data[i].이름}`,data[i].중간고사점수);
+            q1.push(obj)
+        }
+        // obj 를 밖에 빼두면 안됨 !!!!!!!!!!!!!!!!!!!!! 삽질 ㅠㅠㅠ
+        // q1.push([`asda`,124]);
+        console.log(q1);  
+        console.log(typeof q1);  
+        // 2. 이름과 중간고사 점수를 하나의 array로 만들어주세요.
+        console.log(data.map(x => [x.이름, x.중간고사점수]))
+    </script>
+</body>
+</html>
