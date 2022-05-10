@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<!-- var 과 let 의 엄청난 차이점 실습 -->
+<body>
+    <!-- 2개가 영향을 끼칩니다. -->
+    <script src="b.js"></script>
+    <script src="a.js"></script>
+    <script src="과제.js"></script>
+    <script>
+        
+        let data = [10,20,30,40];
+        console.log('평균구하기: ' + 평균구하기(data));
+        console.log(숫자콤마찍기(124123335362));
+        // 1번 script
+        // console.log(함수(10, 20));
+        // console.log(변수);
+    </script>
+    <script>
+        // 2번 script
+    </script>
+</body>
+</html>
