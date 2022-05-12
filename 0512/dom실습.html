@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 연습</title>
+    <style>
+        #app{
+            width: 100%;
+        }
+        .wrap{
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+        }
+        .div-color{
+            background-color: black;
+        }
+        .red{
+            background-color: red;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+        .green{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="div-color wrap"></div>
+        <div class="div-button wrap">
+            <button class="btn1">red</button>
+            <button class="btn2">yellow</button>
+            <button class="btn3">green</button>
+            <button class="btn4 testbtn">test</button>
+        </div>
+    </div>
+    <script>
+        // 빨겅 노랑 초록 버튼을 누르면 색이 바뀌도록 
+        const div_screen = document.querySelector(".div-color");
+        const btn1 = document.querySelector(".btn1");
+        const btn2 = document.querySelector(".btn2");
+        const btn3 = document.querySelector(".btn3");
+        const btn4 = document.querySelector(".btn4");
+
+        let btn = [btn1,btn2,btn3,btn4];
+        console.log(div_screen);
+        console.log(btn);
+
+        btn.forEach((e)=>{
+            e.addEventListener('click', () => {
+                colorReset();
+                div_screen.classList.add(`${e.innerHTML}`);
+                console.log(e.classList[1]);
+                // e.className 으로 하는게 나을수도..
+                // classList 에서 특정 태그를 검색하는 함수를 작성 후 적용하면 ?
+                
+            })
+        })
+        let colorReset = function(){
+            div_screen.classList.remove('red','yellow','green')
+        }
+    </script>
+</body>
+</html>

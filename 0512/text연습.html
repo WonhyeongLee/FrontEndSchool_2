@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>innerText, innerHTML, textContent</title>
+</head>
+<body>
+    <p class="p"> <br>innerHTML</p>
+    <p class="p2"> textContent</p>
+    <p class="p3"> <span style='display:none;'> 안보이는</span> innerText</p>
+    <input class="xss-test" type="text">
+    <button class="test">버튼</button>
+    <script>
+        const p = document.querySelector('.p');
+        const p2 = document.querySelector('.p2');
+        const p3 = document.querySelector('.p3');
+        const btn = document.querySelector('.test');
+        const input = document.querySelector('.xss-test');
+
+
+        console.log(p3.innerHTML);
+        console.log(p3.innerText);
+        console.log(p3.textContent);
+        console.log(p3.outerHTML);
+
+        btn.addEventListener('click', () =>{
+            console.log(input.value);
+            p.innerHTML = input.value;
+            p2.textContent = input.value;
+            p3.innerText = input.value;
+
+        })
+    </script>
+</body>
+</html>
