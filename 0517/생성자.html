@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생성자</title>
+</head>
+<body>
+    <script>
+        let menuList = ['곤드레밥','진라면매운맛','치킨','피자']
+        function Factory(menuList){
+            this.name = menuList;
+
+            this.randomMenu = function(){
+                let ranNum = Math.floor(Math.random() * this.name.length);
+                console.log(ranNum);
+                return this.name[ranNum];
+            }
+            this.outputMenu = function(){
+                let menu = this.randomMenu();
+                return console.log(`${menu}`);
+            }
+        }
+        let robot1 = new Factory(menuList)
+        robot1.outputMenu();
+        let robot2 = new Factory(menuList)
+        robot2.outputMenu();
+
+        // 함수를 새로만드는 문제점이있다 
+        // robot1 === robot2 의 결과가 false 임 ! 
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class 실습</title>
+</head>
+<body>
+    <script>
+        const me = {
+            name : '이원형',
+            phoneNum : '010-0000-0000',
+            address : '경기도 안양시 동안구',
+
+            hello : function(){
+                console.log("안녕하세요");
+                console.log(`이름: ${this.name} \n폰번호 : ${this.phoneNum}`);
+            },
+
+            ouputInfo : function(){
+                this.hello();
+                student.levelUp();
+            }
+        }
+        const student = {
+            level: 1,
+            levelUp : function(){
+                this.level++;
+                console.log(`${this.level}`);
+            }
+        }
+        me.ouputInfo(student);
+    </script>
+</body>
+</html>

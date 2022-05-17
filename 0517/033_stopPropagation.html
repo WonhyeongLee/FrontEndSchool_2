@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stopPropagation</title>
+</head>
+<body>
+    <form action="">
+        <button type="submit" class="submit">제출</button>
+    </form>
+    
+    <script>
+        // 3번째 인자에 true 를 넣으면 캡처링이벤트
+        // 기본은 false = 버블링이벤트
+        // 캡처링 -> 버블링 순으로 이벤트를 감지한다
+        const submit = document.querySelector('.submit');
+        submit.addEventListener('click', (event) => {
+            console.log('clicked');
+            event.preventDefault();
+            event.stopPropagation();
+        });
+        
+        document.body.addEventListener('click', () => {
+            console.log('event still alive!');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class 실습 prototype</title>
+</head>
+<body>
+    <script>
+        let person1 = ['김앤장','010-0000-0000','경기도 안양시']
+        let person2 = ['백종원','010-0000-0000','서울시 은평구']
+        let obj={};
+        let x = 0;
+        const myInfo = function(personInfo){
+            this.name = personInfo[0];
+            this.phoneNum = personInfo[1];
+            this.address = personInfo[2];
+
+            this.hello2 = function(){
+                console.log(`hello - this ${this.name}`);
+                return 'asd';
+            }
+            // return this; 적지않아고 default로 this를 반환함
+        }
+
+        let info = new myInfo(person1);
+        let info2 = new myInfo(person2);
+
+        myInfo.prototype.hello = function(){
+            console.log(`hello - prototype ${this.name}`);
+        }
+
+        myInfo.prototype.ouputInfo = function(){
+                this.hello();
+                student.levelUp();
+        }
+
+                            // const student = {
+        //     level: 1,
+        //     levelUp : function(){
+        //         this.level++;
+        //         console.log(`${this.level}`);
+        //     }
+        // }
+    </script>
+</body>
+</html>
+

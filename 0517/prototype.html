@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype</title>
+</head>
+<body>
+    <script>
+        let menuList = ['곤드레밥','진라면매운맛','치킨','피자']
+        function Factory(menuList){
+            this.name = menuList;
+
+
+        }
+        Factory.prototype.randomMenu = function(){
+            let ranNum = Math.floor(Math.random() * this.name.length);
+            return this.name[ranNum];
+        }
+        Factory.prototype.outputMenu = function(){
+            let menu = this.randomMenu();
+            return console.log(`${menu}`);
+        }
+        let robot1 = new Factory(menuList)
+        robot1.outputMenu();
+        let robot2 = new Factory(menuList)
+        robot2.outputMenu();
+
+
+
+    </script>
+</body>
+</html>

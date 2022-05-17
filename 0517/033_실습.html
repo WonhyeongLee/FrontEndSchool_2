@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stopPropagation 실습</title>
+</head>
+<body>
+<h1>나의 todo list</h1><p>1. 오늘 저녁에는 부대찌게를 끓여 먹겠다.<button type="button">삭제</button></p>
+    <p>
+        2. 후식으로 슈팅스타를 먹겠다.
+        <button type="button">삭제</button>
+    </p>
+    <p>3. 자기 전에 반드시 내일 아침 메뉴를 생각해두겠다.
+        <button type="button">삭제</button>
+    </p>
+    <script>
+        const text = document.querySelectorAll('p');
+        const btns = document.querySelectorAll('button');
+        text.forEach((e)=>{
+            console.log(e);
+            e.addEventListener('click',(event)=>{
+                console.log(event.currentTarget.innerText);
+                let text = event.currentTarget.firstChild.textContent.replace(/\n/g, "").trim()
+                // textContent 로 받으면 마크업공백이 그대로 받아와서 공백을 제거해줘야함
+                // firstChild 는 공백이 있으면 undefined를 반환함 그래서 
+                if(event.target !== event.currentTarget){
+                    return ;
+                }
+                console.log(text);
+                // alert(event.currentTarget.firstChild);
+                // alert(content.firstChild.textContext)
+            })
+        })
+        // Array.prototype.forEach.call(text,(item)=>{
+        //     item.addEventListener('click',(event)=>{
+        //         console.log(event.target.textContent);
+        //         alert(event.target.textContent.slice(0, -2));
+        //     })
+        // })
+
+        // for(const item of btns){
+        //     item.addEventListener('click',(event)=>{
+        //         let result = confirm('삭제하시겠습니까?');
+        //         if(result){
+        //             item.parentElement.remove();
+        //             // event.preventDefault();
+        //             event.stopPropagation();
+        //         }
+        //     })
+        // }
+
+    </script>
+
+<!-- <script>
+    const txts = document.querySelectorAll('p');
+    const btns = document.querySelectorAll('button');
+
+    // for (let i = 0; i < txts.length; i++) {
+    //     txts[i].addEventListener('click', (event) => {
+    //         alert(event.target.textContent.slice(0, -2));
+    //     })
+    // }
+    Array.prototype.forEach.call(txts, (item) => {
+        item.addEventListener('click', (event) => {
+            alert(event.target.textContent.slice(0, -2));
+        })
+    })
+
+    for (const item of btns) {
+        item.addEventListener('click', (event) => {
+            let result = confirm('삭제하시겠습니까?');
+            event.stopPropagation();
+            if (result) {
+                item.parentElement.remove();
+            }
+        })
+    }
+
+</script> -->
+</body>
+</html>
