@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope</title>
+</head>
+<body>
+    <script>
+        // scope : 변수의 생존범위
+        // 스코프체인으로 안부터 검색 후 없으면 밖에서 가져옴
+        // var func = function() {
+            
+        //     var a = 1;
+        //     var b = 2;
+        //     console.log(a + b);
+        //     return a+b;
+        // }
+
+        // var a = 20;
+
+        // func1();
+
+        var func = function() {
+            
+            var a = 1;
+            var b = 2;
+            var func2 = function(){
+                var b = 5;
+                var c = 6;
+                a = a + b+ c;
+                console.log(a);
+            }
+
+            func2()
+        }
+
+        func();
+    </script>
+</body>
+</html>

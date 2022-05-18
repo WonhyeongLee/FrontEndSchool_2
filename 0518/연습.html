@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클래스실습</title>
+</head>
+<body>
+    <script>
+        class Person {
+    //생성자 역할을 하는 constructor
+	constructor(name, age,gender){
+    	this.name = name;
+        this.age = age;
+        this.gender = gender;
+    }
+    
+    //getter
+    get age(){
+    	return this._age;
+    }
+    
+    //setter : class내 속성 값의 제한을 두어야 하는 경우 자주 사용
+    set age(value){
+    	if(value > 0 && value < 150){
+    		this._age = value;
+        }
+    }
+    
+    //method 
+	Print(){
+    	console.log('이름 : ' + this.name + '  나이 : ' + this._age);
+    }
+}
+
+let per1 = new Person('철수',20,'남');
+let per2 = new Person('영희',30,'여');
+
+per1.Print();
+per2.Print();
+
+    </script>
+</body>
+</html>

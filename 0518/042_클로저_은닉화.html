@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클로저은닉, IIFE패턴</title>
+</head>
+<body>
+    <script>
+        function PersonType(){
+            let age = 25;
+
+            function innerPersonType() {}
+            innerPersonType.prototype.getAge = function() {
+                return age;
+            }
+            innerPersonType.prototype.setAge = function(x) {
+                this.age = x
+                console.log(this);
+            }
+            return innerPersonType;
+        }
+
+        const Person3 = PersonType();
+        const person3 = new Person3();
+        console.log(person3.getAge());
+        console.log(person3.setAge(39));
+
+        const PersonType3 = (
+            function () {
+                let age = 15;
+
+                function innerPersonType() { }
+
+                innerPersonType.prototype.getAge = function () {
+                    return age;
+                }
+
+                return innerPersonType;
+            }
+        )();
+
+        const personWithSecret = new PersonType3();
+        console.log(personWithSecret.getAge());
+
+    </script>
+</body>
+</html>

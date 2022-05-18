@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 상속 실습</title>
+</head>
+<body>
+    <script>
+        class Sausage{
+            constructor(material1,material2){
+                this.material1 = material1;
+                this.material2 = material2
+            }
+            taste(){
+                return console.log(`${this.material1}와 ${this.material2} 맛이 난다!`);
+            }
+        }
+
+        class FireSausage extends Sausage{
+            constructor(material1,material2,spicy){
+                super(material1,material2);
+
+                this.spicy = spicy;
+            }
+            taste(){
+                super.taste();
+                this.showSpicy();
+            }
+            showSpicy(){
+                console.log(`매운맛 : ${this.spicy} 단계 !`);
+            }
+        }
+        const sausage = new Sausage('소고기','파');
+        const sausage_fire = new FireSausage('돼지고기','카레',5); 
+    </script>
+</body>
+</html>

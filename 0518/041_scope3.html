@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope</title>
+</head>
+<body>
+    <script>
+        //  previleged method , 모듈패턴
+        //  외부에서 내부의 상태나 동작에 접근하지 못하도록 만드는 패턴
+        function Person(){
+            let age = 15;
+            return {
+                getAge : function() { return age},
+                setAge : function (data) { age = data}
+            }
+        }
+
+        const person = Person();
+        console.log(person.getAge());
+        console.log(person.setAge(40));
+        console.log(person.getAge());
+
+        function PersonType() {
+            this.age = 35;
+        }
+        PersonType.prototype.getAge = function () {
+            return this.age
+        }
+        const person2 = new PersonType();
+        console.log(person2.getAge());
+
+    </script>
+</body>
+</html>

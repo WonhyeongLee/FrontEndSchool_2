@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클래스실습</title>
+</head>
+<body>
+    <script>
+        class PersonInfo{
+            #name;
+            #age;
+            #phoneNum;
+            constructor(name,age,phoneNum){
+                this.#name = name;
+                this.#age = age;
+                this.#phoneNum = phoneNum;
+                // this.sayYourName = function(){
+                // console.log(`제 이름은 : ${this.name} 입니다`);
+                // }
+            }
+
+            sayYourName2(){
+                console.log(`제 이름은 : ${this.#name} 입니다`);
+            }
+
+            get info(){
+                return function(){
+                    console.log(`${this.#name}`);
+                }
+            }
+
+        }
+
+        const person1 = new PersonInfo('이원형',27,'010-0000-0000'); 
+
+        person1.sayYourName2();
+
+    </script>
+</body>
+</html>
