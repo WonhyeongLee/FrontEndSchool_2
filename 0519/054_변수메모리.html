@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+
+    <script>
+        // case1
+        var me = { age:30};
+        var you = me;
+        // {age:30} 참조하는 카운터 : 2
+        me = null;
+        // {age:30} 참조하는 카운터 : 1
+        you = null;
+        // {age : 30 } 참조하는 카운터 : 0 => 가비지 컬렉션 대상이 됩다
+
+        //case2
+        var x = {
+            y: {
+                z:1
+            }
+        }
+        // x가 참조하는 객체 obj1 , y가 참조하는 객체 obj2
+        var a = x; //obj1 참조카운트 : 2
+        x =1 ; //obj1 참조카운트 : 1
+        var b = a.y; //obj2 참조카운트 : 2
+        a = 2; // obj2 의 참조 카운트 : 1(b) , obj1  참조카운트 : 0
+        // obj1 불필요하게 남아있기 때문에 메모리 누수 발생 !!
+
+        // case3. 클러져 메모리 누수문제
+        function outer() {
+            let privateVal = ['test'];
+            function getPrivate() {
+                return privateVal;
+            }
+            return getPrivate;
+            // return 으로 outer() 가 사라져야하지만
+            // secretval 에서 참조하고 있어서 사라지지 않음
+        }
+
+        const private = outer();
+        let secretVal = private();
+        // 나중에 초기화 시켜줘야함
+
+
+
+    </script>
+</body>
+</html>
+

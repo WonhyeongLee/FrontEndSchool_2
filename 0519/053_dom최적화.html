@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <article class="parent">
+        <figure>
+            <img class="figImg"
+                src="https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202112/13/e4725896-2596-44f0-8b95-ab3faaa76d7d.jpg"
+                alt="">
+            <figcaption class="figCap">
+                유재석씨가 코로나에 돌파 감염되었다는 소식입니다.
+            </figcaption>
+        </figure>
+    </article>
+
+    <!-- 
+    1. 이미지는 https://file.mk.co.kr/meet/neds/2021/07/image_readtop_2021_654175_16256093474708254.jpg 로 변경합니다.
+    2. figcaption 안의 텍스트는 '유재석씨가 수상식에서 환하게 웃고 있다.' 로 변경합니다.
+    -->
+    <script>
+        const parentEl = document.querySelector('body')
+        const parent = document.querySelector('.parent')
+        const tergetImg = parent.querySelector('.figImg');
+        const targetTxt = parent.querySelector('.figCap');
+        const fragment = document.createDocumentFragment();
+        const imgSrc = `https://file.mk.co.kr/meet/neds/2021/07/image_readtop_2021_654175_16256093474708254.jpg`;
+
+        // querySelector은 for안에 넣지말자
+        // for(let i = 0; i < 10; i++){
+        //     const parentEl = document.querySelector('body')
+        //     const article = document.createElement('article');
+        //     const figure = document.createElement('figure');
+        //     article.innerHTML = `
+        //             <figure>
+        //             <img class="figImg"
+        //                 src="${imgSrc}"
+        //                 alt="">
+        //             <figcaption class="figCap">
+        //                 유재석씨가 코로나에 돌파 감염되었다는 소식입니다.
+        //             </figcaption>
+        //         </figure>`;
+        //     parentEl.appendChild(article);
+        // }
+
+        // documentFragment 사용
+        for(let i = 0; i < 10; i++){
+            const article = document.createElement('article');
+            article.innerHTML = `
+                    <figure>
+                    <img class="figImg"
+                        src="${imgSrc}"
+                        alt="">
+                    <figcaption class="figCap">
+                        유재석씨가 코로나에 돌파 감염되었다는 소식입니다.
+                    </figcaption>
+                </figure>`;
+            fragment.appendChild(article);
+        }
+        parentEl.appendChild(fragment);
+    </script>
+</body>
+</html>
+
+<!-- 
+1. 이미지는 https://file.mk.co.kr/meet/neds/2021/07/image_readtop_2021_654175_16256093474708254.jpg 로 변경합니다.
+2. figcaption 안의 텍스트는 '유재석씨가 수상식에서 환하게 웃고 있다.' 로 변경합니다.
+-->

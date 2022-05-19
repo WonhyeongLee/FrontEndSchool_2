@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class이용 todoList 실습</title>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+
+    <script>
+        class Todo {
+            constructor(item, finished = false){
+                this.item = item;
+                this.finished = finished;
+            }
+
+            changeState() {
+                this.finished = !this.finished 
+            }
+        }
+        class TodoManager {
+            constructor() {
+                this.todoList = [];
+            }
+            addItem(item, finished =false) {
+                // const todo = new Todo(item, finished);
+                this.todoList.push(new Todo(item, finished));
+            }
+            getItems() {
+                return this.todoList;
+            }
+            getLeftTodoCount() {
+                this.todoList.reduce((total, current) => {
+                    if(current.finished === false){
+                        return ++total;
+                    } else {
+                        return total;
+                    }    
+                }, 0);
+            }
+        }
+
+        const todoManager = new TodoManager();
+        todoManager.addItem('아침인사하기',2342);
+    </script>
+</body>
+</html>
