@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise</title>
+</head>
+<body>
+    <script> const log = console.log;</script>
+    <script>
+        function add10(a, callback){
+            setTimeout(()=>callback(a+10),100);
+        }
+        add10(5, res => {
+            log(res);
+            add10(res, res => {
+                log(res);
+            });
+        });
+        function add20(a){
+            return new Promise(resolve => setTimeout(() => 
+                resolve(a+20)
+            , 1000));
+        }
+
+        add20(5)
+        .then(add20)
+        .then(add20)
+        .then(log);
+    // Promise는 대기,성공,실패를 다루는 일급 값으로 이루어져 있다
+    // promise 와 callback 의 가장 큰 차이점은 비동기 상황을 (일급) 값으로 다룬 다는 점이다. 따라서 값으로 할당, 전달될 수 있다.
+    
+
+    </script>
+    </html>
+</body>

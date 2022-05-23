@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise</title>
+</head>
+<body>
+    <script> const log = console.log;</script>
+    <script>
+        const delay100 = a => new Promise(resolve => setTimeout(()=>resolve(a), 100));
+        // const go1 = (a, f) => f(a);
+        const go1 = (a, f) => a instanceof Promise ? a.then(f) : f(a);
+        // promise인 값을 인수로 받아서 실행 가능하도록 하는 코드
+        const add5 = a => a+5;
+        const n1 = delay100(10);
+        go1(go1(n1,add5), log);
+
+        // f라는 함수가 동기적이고 a라는 값역시 동기적으로 바로 알 수 있는 값이여야한다.
+        // promise가 아닌 값이 들어와야 잘 작동한다는 뜻
+        
+        log(go1(10, add5));
+        // log(go1(Promise.resolve(10),add5));  
+        // 10 대신 딜레이가 있는 값이면 ?
+        // 정상적인 연산을 할 수 없음 [object Promise]5
+        // log(go1(delay100(10),add5)) 같은 이유로 안됨
+
+
+    </script>
+    </html>
+</body>
