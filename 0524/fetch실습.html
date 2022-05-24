@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch 실습</title>
+</head>
+<body>
+    <script>
+        // fetch로 전국 2차접종 퍼센트 뽑아보기
+        fetch('https://raw.githubusercontent.com/paullabkorea/coronaVaccinationStatus/main/data/data.json')
+    .then(function(response) {
+        return response.json();
+    }).then(json =>{
+        let 지역 = json.find(x=>x['시·도별(1)'] == '전국');
+        console.log(`fetch : ${지역['2차 접종 누계']}`);
+        console.log(지역);
+        return 지역;
+    })
+
+    // async-await 로 구현
+    async function 접종퍼센트(지역){
+        const response = await fetch('https://raw.githubusercontent.com/paullabkorea/coronaVaccinationStatus/main/data/data.json');
+        const data = await(response.json());
+        const 접종퍼센트 = data.find(s => s['시·도별(1)'] == 지역)['2차 접종 퍼센트'];
+        console.log(접종퍼센트);
+    }
+    접종퍼센트('전국');
+
+    </script>
+</body>
+</html>

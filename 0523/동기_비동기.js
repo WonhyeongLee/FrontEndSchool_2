@@ -78,7 +78,7 @@ let p5 = new Promise(function(resolve, reject) {
   setTimeout(() => resolve("끝남!"), 3000);
 });
 console.log('hello world');
-console.log(p);
+console.log(p5);
 //VM92:4 hello world
 //VM92:5 Promise {<pending>}
 
