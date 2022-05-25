@@ -1,0 +1,73 @@
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>위니브 스토어</title>
+    <link href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="src/style/style.css">
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+        const root = document.getElementById('root')
+
+        async function getProductData() {
+            const response = await fetch('http://test.api.weniv.co.kr/mall')
+            const product = await response.json()
+            return product
+        }
+        // console.log(getProductData())
+        getProductData().then(product => {
+            // console.log(product)
+            const mainElement = document.createElement('main')
+            // console.log(mainElement)
+            mainElement.classList.add('product')
+            // console.log(mainElement)
+
+            // 1
+            mainElement.innerHTML = `
+                <h1 class="ir">상품목록 페이지</h1>
+                <ul class="product-list"></ul>
+            `
+            // console.log(mainElement)
+
+            // 2 아래 코드로 작성하면 더 좋지만, 여러분이 html이 익숙하기 때문에 innerHTML로 작성하였습니다. 맨 아래 있는 스크립트도 참고해주세요.
+            // const prodctPageHeader = document.createElement("h1");
+            // prodctPageHeader.setAttribute("class", "ir");
+            // prodctPageHeader.innerText = "상품목록 페이지";
+            // mainElement.appendChild(prodctPageHeader);
+
+            // const productList = document.createElement("ul");
+            // productList.setAttribute("class", "product-list");
+            // mainElement.appendChild(productList);
+            // console.log(mainElement)
+
+            const productList = mainElement.querySelector('.product-list');
+
+            product.forEach((item) => {
+                // console.log(item)
+                const productDetailLink = document.createElement('a')
+                productDetailLink.href = `/detail/${item.id}`
+                productDetailLink.innerHTML = `
+                    <li class="product-item">
+                        <div class="product-img">
+                            <img src="http://test.api.weniv.co.kr/${item.thumbnailImg}">
+                        </div>
+                        ${item.productName}
+                        <br>
+                        ${item.price}
+                    </li>
+                `
+                productList.append(productDetailLink)
+            });
+
+            console.log(productList)
+
+        })
+    </script>
+</body>
+
+</html>
